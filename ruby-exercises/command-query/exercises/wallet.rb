@@ -1,9 +1,15 @@
 class Wallet
 
-attr_accessor :cents, :penny
+  attr_accessor :wallet, :money, :cents
 
-def initialize
-  @cents = 0
-  @penny = 1
-end
+  def initialize
+    @wallet = [@cents]
+    @money = {:penny => 1, :nickel => 5, :dime => 10}
+    @cents = 0
+  end
+  def <<(money)
+    self.wallet << money
+    self.cents += money 
+
+  end
 end

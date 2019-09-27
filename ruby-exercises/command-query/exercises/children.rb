@@ -1,22 +1,26 @@
 class Children
-  attr_accessor :eldest, :child
+  attr_accessor :eldest, :child, :child_age, :names
   def initialize
     @child = []
-    @eldest
+    @eldest_child
+    @child_age = []
+    @names
   end
   def <<(child)
-    self.child << child
+    self.child << child.name
+    self.child_age << child.age
   end
   def eldest
+    eldest_child = self.child_age.index(self.child_age.max)
 
+   self.child.each do |name|
+     if child.find_index(name) == eldest_child
+        self.names = name.to_s
+      end
+   end
+    self
   end
-end
-
-class Child
-  attr_accessor :name, :age
-  def initialize(name, age)
-    @name = name
-    @age = age
+  def name
+    names
   end
-
 end

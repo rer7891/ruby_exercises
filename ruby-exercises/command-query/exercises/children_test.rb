@@ -6,6 +6,7 @@ require_relative 'children'
 
 class ChildrenTest < Minitest::Test
   def test_nobody_is_the_eldest
+skip
     children = Children.new
 
     assert_nil children.eldest
@@ -18,7 +19,6 @@ class ChildrenTest < Minitest::Test
   end
 
   def test_the_eldest_of_several
-    skip
     children = Children.new
     children << Child.new("Robert", 2)
     children << Child.new("Fran", 8)
